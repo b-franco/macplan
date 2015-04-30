@@ -9,6 +9,7 @@
 
   roles:
     - { role: apps, tags: ['apps'] }
+    - { role: bin, tags: ['bin'] }
     - { role: dotfiles, tags: ['dotfiles'] }
     # - { role: osx, tags: ['osx'] }
     - { role: terminal, tags: ['terminal'] }

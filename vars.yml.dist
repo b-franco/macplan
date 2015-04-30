@@ -1,6 +1,7 @@
 user: Username
 account_picture: files/Picture.jpg
 dotfiles_dir: '/Users/{{ user }}/'
+custom_bin_dir: '/Users/{{ user }}/bin'
 gitconfig_name: John Doe
 gitconfig_email: john@ansible.com
 osx_lock_screen_text: Found Me? Stole Me? Return me Back!\n ..

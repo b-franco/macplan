@@ -1,0 +1,7 @@
+- name: Create bin folder
+  file: path={{custom_bin_dir}} state=directory
+
+- name: Create custom binaries
+  copy: src="{{ item }}" dest="{{ custom_bin_dir }}/{{ item }}" mode="0777"
+  with_items:
+    - clearcache.sh
