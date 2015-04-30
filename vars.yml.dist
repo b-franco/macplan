@@ -30,6 +30,7 @@ cask_apps:
   - gas-mask
   - transmit
   - osxfuse
+  - iterm2
 
 vagrant_plugins:
   - vagrant-vbguest
