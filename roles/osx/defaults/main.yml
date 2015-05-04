@@ -41,7 +41,7 @@ osx_sudo_defaults:
     # Enable Yosemite Dark mode
     - defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
     # Hide spotlight icon
-    - chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+    #- chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
     # Disable sudden motion sensor
     - pmset -a sms 0
     # Speeding up wake from sleep to 24 hours from an hour
@@ -54,8 +54,9 @@ osx_sudo_defaults:
     - defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Keyboard Enabled" -bool false
 
     # Disable spotlight
-    - launchctl unload /System/Library/LaunchAgents/com.apple.Spotlight.plist
+    #- launchctl unload /System/Library/LaunchAgents/com.apple.Spotlight.plist
 
+    # Dont index mounted volumes
     - defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 
 osx_defaults:
@@ -430,12 +431,12 @@ osx_defaults:
     # disable spotlight indexing
     - |
         defaults write com.apple.spotlight orderedItems -array \
-        '{"enabled" = 0;"name" = "APPLICATIONS";}' \
-        '{"enabled" = 0;"name" = "SYSTEM_PREFS";}' \
-        '{"enabled" = 0;"name" = "DIRECTORIES";}' \
-        '{"enabled" = 0;"name" = "PDF";}' \
-        '{"enabled" = 0;"name" = "FONTS";}' \
-        '{"enabled" = 0;"name" = "DOCUMENTS";}' \
+        '{"enabled" = 1;"name" = "APPLICATIONS";}' \
+        '{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+        '{"enabled" = 1;"name" = "DIRECTORIES";}' \
+        '{"enabled" = 1;"name" = "PDF";}' \
+        '{"enabled" = 1;"name" = "FONTS";}' \
+        '{"enabled" = 1;"name" = "DOCUMENTS";}' \
         '{"enabled" = 0;"name" = "MESSAGES";}' \
         '{"enabled" = 0;"name" = "CONTACT";}' \
         '{"enabled" = 0;"name" = "EVENT_TODO";}' \
